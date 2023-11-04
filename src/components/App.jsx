@@ -16,7 +16,6 @@ export default function App() {
   const [largeImage, setLargeImage] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (!page) {
@@ -37,7 +36,7 @@ export default function App() {
           setImages((prevImages) => [...prevImages, ...newImages]);
         }
       } catch (error) {
-        setError(error);
+        console.error(error); 
       } finally {
         setIsLoading(false);
       }
